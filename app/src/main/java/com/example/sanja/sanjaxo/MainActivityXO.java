@@ -147,7 +147,7 @@ public class MainActivityXO extends AppCompatActivity {
                 b[x][y].setEnabled(false);
                 b[x][y].setText("O");
                 c[x][y] = 0;
-                textView.setText("");
+                //textView.setText("");     ovdje je bila greška zašto se aplikacija ruši
                 if (checkBoard()) {
                     ai.takeTurn();
                 }
