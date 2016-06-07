@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Color;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -19,9 +20,8 @@ import java.util.Random;
 public class MainActivityXO extends AppCompatActivity {
 
     int c[][];
-    int i, j, k = 0;
+    int i, j, k = 0;  // koristi se za for petlje
     Button b[][];
-    TextView textView;
     AI ai;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -147,7 +147,6 @@ public class MainActivityXO extends AppCompatActivity {
                 b[x][y].setEnabled(false);
                 b[x][y].setText("O");
                 c[x][y] = 0;
-                //textView.setText("");     ovdje je bila greška zašto se aplikacija ruši
                 if (checkBoard()) {
                     ai.takeTurn();
                 }
