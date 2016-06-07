@@ -43,6 +43,10 @@ public class KrizicKruzicPloca {
         izmjeniIgraca();
     }
 
+    //trebam napraviti potez u kojem racunalo gleda dali ce pobijediti ukoliko odigra potez na odrecenom mjestu.
+    // ako nece pobijediti potez se odigrava na random mjesto
+
+    // trebam napraviti provjeru dali ima pobjednika
 
 
 }
