@@ -11,23 +11,21 @@
                 android:background="#0011ff"
                 android:backgroundTint="@android:color/holo_blue_light"
     android:icon="@mipmap/ic_launcher"
-                android:clickable="false">
+                android:clickable="false"
+    android:gravity="center_horizontal">
 
     <TableLayout
         android:id="@+id/tableLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center"
-        android:layout_centerVertical="true"
-        >
+        android:layout_centerVertical="true">
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:gravity="center">
+            android:textAlignment="center">
 
             <Button
                 android:id="@+id/button1"
@@ -59,10 +57,9 @@
 
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:gravity="center">
+            android:textAlignment="center">
 
             <Button
                 android:id="@+id/button4"
@@ -92,10 +89,9 @@
         </TableRow>
         <TableRow
             android:id="@+id/tableRow3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:gravity="center">
+            android:textAlignment="center">
             <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
