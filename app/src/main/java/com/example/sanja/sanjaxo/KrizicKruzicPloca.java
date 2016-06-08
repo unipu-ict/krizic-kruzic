@@ -6,8 +6,8 @@ import java.util.Random;
 public class KrizicKruzicPloca {
 
     //******** varijable klase ********
-    private final static int mRed  = 3;
-    private final static int mKolona  = 3;
+    public final static int mRed  = 3;
+    public final static int mKolona  = 3;
 
     public static final char Covjek = 'O';  //ovdje mogu napraviti da prilikom pocinjanja igre, igrac bira koji znak ce biti
     public static final char Stroj = 'X';

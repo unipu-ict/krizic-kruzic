@@ -21,12 +21,9 @@ public class MainActivityXO extends AppCompatActivity {
 
     int c[][];
     int i, j, k = 0;  // koristi se za for petlje
-    Button b[][];
+    Button Btn[][];
     AI ai;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+
     private GoogleApiClient client;
 
     @Override
@@ -34,9 +31,21 @@ public class MainActivityXO extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_xo);
 
+        KrizicKruzicPloca Ploca = new KrizicKruzicPloca();
+        Ploca.ocistiPlocu();
+
+        Btn = new Button[Ploca.mRed][Ploca.mKolona];
+        Btn[0][0] = (Button) findViewById(R.id.button1);
+        Btn[0][1] = (Button) findViewById(R.id.button2);
+        Btn[0][2] = (Button) findViewById(R.id.button3);
+        Btn[1][0] = (Button) findViewById(R.id.button4);
+        Btn[1][1] = (Button) findViewById(R.id.button5);
+        Btn[1][2] = (Button) findViewById(R.id.button6);
+        Btn[2][0] = (Button) findViewById(R.id.button7);
+        Btn[2][1] = (Button) findViewById(R.id.button8);
+        Btn[2][2] = (Button) findViewById(R.id.button9);
+
         setBoard();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -56,19 +65,11 @@ public class MainActivityXO extends AppCompatActivity {
     // Set up the game board.
     private void setBoard() {
         ai = new AI();
-        b = new Button[3][3];
+
         c = new int[3][3];
 
 
-        b[0][0] = (Button) findViewById(R.id.button1);
-        b[0][1] = (Button) findViewById(R.id.button2);
-        b[0][2] = (Button) findViewById(R.id.button3);
-        b[1][0] = (Button) findViewById(R.id.button4);
-        b[1][1] = (Button) findViewById(R.id.button5);
-        b[1][2] = (Button) findViewById(R.id.button6);
-        b[2][0] = (Button) findViewById(R.id.button7);
-        b[2][1] = (Button) findViewById(R.id.button8);
-        b[2][2] = (Button) findViewById(R.id.button9);
+
 
         for (i = 0; i <= 2; i++) {
             for (j = 0; j <= 2; j++)
@@ -83,10 +84,10 @@ public class MainActivityXO extends AppCompatActivity {
         // add the click listeners for each button
         for (i = 0; i <= 2; i++) {
             for (j = 0; j <= 2; j++) {
-                b[i][j].setOnClickListener(new MyClickListener(i, j));
-                if (!b[i][j].isEnabled()) {
-                    b[i][j].setText("?");
-                    b[i][j].setEnabled(true);
+                Btn[i][j].setOnClickListener(new MyClickListener(i, j));
+                if (!Btn[i][j].isEnabled()) {
+                    Btn[i][j].setText("?");
+                    Btn[i][j].setEnabled(true);
                 }
             }
         }
@@ -143,13 +144,15 @@ public class MainActivityXO extends AppCompatActivity {
         }
 
         public void onClick(View view) {
-            if (b[x][y].isEnabled()) {
-                b[x][y].setEnabled(false);
-                b[x][y].setText("O");
+            if (Btn[x][y].isEnabled()) {
+                Btn[x][y].setEnabled(false);
+                Btn[x][y].setText("O");
+                ai.takeTurn();
                 c[x][y] = 0;
-                if (checkBoard()) {
-                    ai.takeTurn();
-                }
+
+
+                checkBoard();
+
             }
         }
     }
@@ -214,9 +217,9 @@ public class MainActivityXO extends AppCompatActivity {
 
 
         private void markSquare(int x, int y) {
-            b[x][y].setEnabled(false);
-            b[x][y].setText("X");
-            c[x][y] = 0;
+            Btn[x][y].setEnabled(false);
+            Btn[x][y].setText("X");
+            c[x][y] = 1;
             checkBoard();
         }
     }
@@ -237,14 +240,14 @@ public class MainActivityXO extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Game Over! Pobijedio si!",
                     Toast.LENGTH_SHORT).show();
             gameOver = true;
-        } else if ((c[0][0] == 0 && c[1][1] == 0 && c[2][2] == 0)
-                || (c[0][2] == 0 && c[1][1] == 0 && c[2][0] == 0)
-                || (c[0][1] == 0 && c[1][1] == 0 && c[2][1] == 0)
-                || (c[0][2] == 0 && c[1][2] == 0 && c[2][2] == 0)
-                || (c[0][0] == 0 && c[0][1] == 0 && c[0][2] == 0)
-                || (c[1][0] == 0 && c[1][1] == 0 && c[1][2] == 0)
-                || (c[2][0] == 0 && c[2][1] == 0 && c[2][2] == 0)
-                || (c[0][0] == 0 && c[1][0] == 0 && c[2][0] == 0)) {
+        } else if ((c[0][0] == 1 && c[1][1] == 1 && c[2][2] == 1)
+                || (c[0][2] == 1 && c[1][1] == 1 && c[2][0] == 1)
+                || (c[0][1] == 1 && c[1][1] == 1 && c[2][1] == 1)
+                || (c[0][2] == 1 && c[1][2] == 1 && c[2][2] == 1)
+                || (c[0][0] == 1 && c[0][1] == 1 && c[0][2] == 1)
+                || (c[1][0] == 1 && c[1][1] == 1 && c[1][2] == 1)
+                || (c[2][0] == 1 && c[2][1] == 1 && c[2][2] == 1)
+                || (c[0][0] == 1 && c[1][0] == 1 && c[2][0] == 1)) {
 
             Toast.makeText(getApplicationContext(), "Game Over! Izgubio si!",
                     Toast.LENGTH_SHORT).show();
