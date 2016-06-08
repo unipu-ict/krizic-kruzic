@@ -10,7 +10,31 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void provjeraTrenutnog(){
+    public void provjeraPoRedu(){
         KrizicKruzicPloca test = new KrizicKruzicPloca();
+        test.ocistiPlocu();
+        test.postavi(1,0,'X');
+        test.postavi(1,1,'X');
+        test.postavi(1,2,'X');
+        assertEquals(test.provjeraPobjednika(), 'X');
     }
+    @Test
+    public void provjeraPokoloni(){
+        KrizicKruzicPloca test = new KrizicKruzicPloca();
+        test.ocistiPlocu();
+        test.postavi(0,0,'X');
+        test.postavi(1,0,'X');
+        test.postavi(2,0,'X');
+        assertEquals(test.provjeraPobjednika(), 'X');
+    }
+    @Test
+    public void provjeradijagonale(){
+        KrizicKruzicPloca test = new KrizicKruzicPloca();
+        test.ocistiPlocu();
+        test.postavi(0,0,'X');
+        test.postavi(1,1,'X');
+        test.postavi(2,2,'X');
+        assertEquals(test.provjeraPobjednika(), 'X');
+    }
+
 }
