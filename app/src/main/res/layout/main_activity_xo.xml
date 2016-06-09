@@ -30,27 +30,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:height="100dp"
-                android:text="@string/_0_0"
+                android:text="*"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0_1"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0_2"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
         </TableRow>
 
         <TableRow
@@ -63,27 +66,30 @@
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_1_0"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_1_1"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
             <Button
                 android:id="@+id/button6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_1_2"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
         </TableRow>
         <TableRow
             android:id="@+id/tableRow3"
@@ -94,26 +100,29 @@
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_2_0"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
             <Button
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_2_1"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
             <Button
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_2_2"
+                android:text="*"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6" />
+                android:background="#f6aee6"
+                android:textSize="36dp" />
         </TableRow>
     </TableLayout>
 </RelativeLayout>

@@ -10,7 +10,10 @@ public class KrizicKruzicPloca {
     public final static int mRed  = 3;
     public final static int mKolona  = 3;
 
-    private static final char Covjek = 'O';  //ovdje mogu napraviti da prilikom pocinjanja igre, igrac bira koji znak ce biti
+    // ploca za igranje
+    private char[][] mPloca = new char[mRed][mKolona];
+
+    private static final char Covjek = 'O';
     private static final char Stroj = 'X';
     private static final char Prazno_polje = '_';
 
@@ -18,16 +21,15 @@ public class KrizicKruzicPloca {
     private Random mRandom = new Random();
     private char trenutniIgrac = mRandom.nextBoolean() ? 'X' : 'O';
 
-    // ploca za igranje
-    private char[][] mPloca = new char[mRed][mKolona];
     //*************************************
 
 
     //********** funkcije klase *********
-    public KrizicKruzicPloca(){
+
+    public KrizicKruzicPloca(){     //konstruktor klase
     }
 
-    public char trenIgrac(){
+    public char trenIgrac(){        //vraća trenutnog igrača
         return trenutniIgrac;
     }
 
@@ -109,7 +111,7 @@ public class KrizicKruzicPloca {
 
         //provjera red po red
         for(int i = 0; i < mRed; i++){
-            if(winner == Prazno_polje && mPloca[i][0] ==  mPloca[i][1] &&  mPloca[i][2] ==  mPloca[i][2]) winner = mPloca[i][0];
+            if(winner == Prazno_polje && mPloca[i][0] ==  mPloca[i][1] &&  mPloca[i][1] ==  mPloca[i][2]) winner = mPloca[i][0];
         }
 
         //provjera kolona po kolona
