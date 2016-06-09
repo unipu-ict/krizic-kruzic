@@ -19,7 +19,7 @@ public class KrizicKruzicPloca {
 
     //Postavlja se random igrac koji pocinje igru
     private Random mRandom = new Random();
-    private char trenutniIgrac = mRandom.nextBoolean() ? 'X' : 'O';
+    private char trenutniIgrac = 'X';//mRandom.nextBoolean() ? 'X' : 'O';
 
     //*************************************
 
@@ -31,6 +31,10 @@ public class KrizicKruzicPloca {
 
     public char trenIgrac(){        //vraća trenutnog igrača
         return trenutniIgrac;
+    }
+
+    public char vratiIgraca(int i, int j){
+        return mPloca[i][j];
     }
 
     public void ocistiPlocu(){
@@ -48,62 +52,10 @@ public class KrizicKruzicPloca {
 
     public void postavi(int red, int kolona, char igrac){
         mPloca[red][kolona] = igrac;
-        izmjeniIgraca();
-    }
-
-    public char potezStroja(){
-
-        int potezRed, potezKolona;
-
-        //prvo provjera dali android moze pobijediti
-        for(int i = 0; i < mRed; i++){
-            for( int j = 0; j < mKolona; j++){
-
-                //provjera dali je slobodno mjesto
-                if(mPloca[i][j] == Prazno_polje){
-
-                    postavi(i,j,Stroj);  //trenutno ili za stalno se postavlja vrijednost stroja na polje
-
-                    if(provjeraPobjednika() == Stroj){
-                        return Stroj;
-                    }
-                    else postavi(i,j,Prazno_polje);
-                }
-            }
-        }
-
-        // Provjera ako moze covjek pobijediti pa ce mu stroj zatvoriti polje
-        for(int i = 0; i < mRed; i++){
-            for( int j = 0; j < mKolona; j++){
-
-                //provjera dali je slobodno mjesto
-                if(mPloca[i][j] == Prazno_polje){
-
-                    postavi(i,j, Covjek);  //trenutno ili za stalno se postavlja vrijednost stroja na polje
-
-                    if(provjeraPobjednika() == Covjek){
-                        return Covjek;
-                    }
-
-                    else postavi(i,j,Prazno_polje);
-                }
-            }
-        }
-
-        //ne moze se pobijediti pa stroj stavlja potez na random mjesto
-        potezRed = mRandom.nextInt(mRed);
-        potezKolona = mRandom.nextInt(mKolona);
-
-        while(mPloca[potezRed][potezKolona] != Prazno_polje){
-            potezRed = mRandom.nextInt(mRed);
-            potezKolona = mRandom.nextInt(mKolona);
-        }
-        // Trebam provjeru dali je ploca ispunjena
-
-        postavi(potezRed, potezKolona, Stroj);
-       return mPloca[potezRed][potezKolona];
 
     }
+
+
 
     public char provjeraPobjednika(){
 
