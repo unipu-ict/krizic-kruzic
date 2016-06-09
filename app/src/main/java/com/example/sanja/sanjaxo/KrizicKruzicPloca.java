@@ -3,27 +3,33 @@ import static java.lang.System.*;
 
 import java.util.Random;
 
+// Testiranje
+
 public class KrizicKruzicPloca {
 
     //******** varijable klase ********
     public final static int mRed  = 3;
     public final static int mKolona  = 3;
 
-    public static final char Covjek = 'O';  //ovdje mogu napraviti da prilikom pocinjanja igre, igrac bira koji znak ce biti
-    public static final char Stroj = 'X';
-    public static final char Prazno_polje = '_';
+    private static final char Covjek = 'O';  //ovdje mogu napraviti da prilikom pocinjanja igre, igrac bira koji znak ce biti
+    private static final char Stroj = 'X';
+    private static final char Prazno_polje = '_';
 
     //Postavlja se random igrac koji pocinje igru
     private Random mRandom = new Random();
-    public char trenutniIgrac = mRandom.nextBoolean() ? 'X' : 'O';
+    private char trenutniIgrac = mRandom.nextBoolean() ? 'X' : 'O';
 
     // ploca za igranje
     private char[][] mPloca = new char[mRed][mKolona];
     //*************************************
 
 
-    //********** metode klase *********
+    //********** funkcije klase *********
     public KrizicKruzicPloca(){
+    }
+
+    public char trenIgrac(){
+        return trenutniIgrac;
     }
 
     public void ocistiPlocu(){
@@ -114,6 +120,15 @@ public class KrizicKruzicPloca {
 
         //dijagonalna provjera
         if((winner == Prazno_polje && mPloca[0][0] == mPloca[1][1] && mPloca[1][1] == mPloca[2][2]) || (winner == Prazno_polje && mPloca[0][2] == mPloca[1][1] && mPloca[1][1] == mPloca[2][0]))  winner = mPloca[1][1];
+
+        //provjera dali je puno polje, tj dali je izjednaceno
+        int counter = 0;
+        for(int i = 0; i<mRed; i++){
+            for (int j = 0; j<mKolona; j++){
+                if(mPloca[i][j] == Prazno_polje) counter++;
+            }
+        }
+        if(counter == 0) winner = 'I'; //ako nema praznih polja je Izjednaceno
 
         return winner;
     }

@@ -3,6 +3,7 @@ package com.example.sanja.sanjaxo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.Random;
 
 public class MainActivityXO extends AppCompatActivity {
 
+    KrizicKruzicPloca Ploca = new KrizicKruzicPloca();
     int c[][];
     int i, j, k = 0;  // koristi se za for petlje
     Button Btn[][];
@@ -31,8 +33,7 @@ public class MainActivityXO extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_xo);
 
-        KrizicKruzicPloca Ploca = new KrizicKruzicPloca();
-        Ploca.ocistiPlocu();
+        Ploca.ocistiPlocu();        //postavljenje ploče
 
         Btn = new Button[Ploca.mRed][Ploca.mKolona];
         Btn[0][0] = (Button) findViewById(R.id.button1);
@@ -64,22 +65,18 @@ public class MainActivityXO extends AppCompatActivity {
 
     // Set up the game board.
     private void setBoard() {
+
         ai = new AI();
 
         c = new int[3][3];
-
-
-
 
         for (i = 0; i <= 2; i++) {
             for (j = 0; j <= 2; j++)
                 c[i][j] = 2;
         }
 
-
         Toast.makeText(getApplicationContext(), "Klikni za start!",
                 Toast.LENGTH_SHORT).show();
-
 
         // add the click listeners for each button
         for (i = 0; i <= 2; i++) {
@@ -146,10 +143,10 @@ public class MainActivityXO extends AppCompatActivity {
         public void onClick(View view) {
             if (Btn[x][y].isEnabled()) {
                 Btn[x][y].setEnabled(false);
+
                 Btn[x][y].setText("O");
                 ai.takeTurn();
                 c[x][y] = 0;
-
 
                 checkBoard();
 

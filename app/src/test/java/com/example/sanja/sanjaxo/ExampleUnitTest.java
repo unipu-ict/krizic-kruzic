@@ -36,5 +36,14 @@ public class ExampleUnitTest {
         test.postavi(2,2,'X');
         assertEquals(test.provjeraPobjednika(), 'X');
     }
+    @Test
+    public void provjeraPlayera(){
+        KrizicKruzicPloca test = new KrizicKruzicPloca();
+        System.out.println("PROVJERA Trenutnog");
+        System.out.println(test.trenIgrac());
+        test.izmjeniIgraca();
+        System.out.println(test.trenIgrac());
+        //assertEquals(test.provjeraPobjednika(), 'X');
+    }
 
 }
