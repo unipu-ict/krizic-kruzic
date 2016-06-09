@@ -3,7 +3,6 @@ import static java.lang.System.*;
 
 import java.util.Random;
 
-// Testiranje
 
 public class KrizicKruzicPloca {
 
