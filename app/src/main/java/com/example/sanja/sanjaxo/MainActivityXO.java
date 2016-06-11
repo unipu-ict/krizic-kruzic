@@ -154,7 +154,7 @@ public class MainActivityXO extends AppCompatActivity {
                         Btn[i][j].setTextColor(Color.GREEN);
                         provjeraPobjednika();
                         return;
-                        
+
                     } else Ploca.postavi(i, j, Prazno_polje);
                 }
             }
@@ -211,7 +211,7 @@ public class MainActivityXO extends AppCompatActivity {
                 if (Ploca.vratiIgraca(i, j) == Prazno_polje) counter++;
             }
         }
-        if (counter == 0) provjeraPobjednika();
+         if (counter == 0) provjeraPobjednika();
 
     }
 
