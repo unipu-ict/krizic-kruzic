@@ -1,13 +1,14 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    tools:context="com.example.sanja.sanjaxo.OneVsOne"
+    android:layout_height="match_parent"
     android:background="#0011ff"
     android:backgroundTint="@android:color/holo_blue_light"
     android:icon="@mipmap/ic_launcher"
     android:clickable="false"
     android:gravity="center_horizontal">
+
 
     <TableLayout
         android:id="@+id/tableLayout1"
@@ -213,4 +214,17 @@
             android:layout_marginEnd="24dp" />
     </RelativeLayout>
 
-</RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Povratak u izbornik"
+        android:id="@+id/button_back"
+        android:onClick="goBack"
+        android:layout_gravity="center_horizontal"/>
+
+
+</LinearLayout>
+
+
+
+

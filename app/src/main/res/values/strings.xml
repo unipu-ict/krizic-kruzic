@@ -2,15 +2,6 @@
 <resources>
     <string name="app_name">Križić Kružić</string>
     <string name="igraj">normal_click</string>
-    <string name="_0_0">\?</string>
-    <string name="_0_1">\?</string>
-    <string name="_0_2">\?</string>
-    <string name="_1_0">\?</string>
-    <string name="_1_1">\?</string>
-    <string name="_1_2">\?</string>
-    <string name="_2_0">\?</string>
-    <string name="_2_1">\?</string>
-    <string name="_2_2">\?</string>
     <string name="button1">*</string>
     <string name="button2">*</string>
     <string name="button3">*</string>
@@ -20,7 +11,10 @@
     <string name="button7">*</string>
     <string name="button8">*</string>
     <string name="button9">*</string>
+    <string name="button_back">Back</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="calling_activity_message">calling_activity_message</string>
+    <string name="vs_android">Player vs Android</string>
 </resources>
