@@ -3,8 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0011ff"
-    android:backgroundTint="@android:color/holo_blue_light"
+    android:background="@color/dim_foreground_material_light"
+    android:backgroundTint="@color/dim_foreground_material_light"
     android:icon="@mipmap/ic_launcher"
     android:clickable="false"
     android:gravity="center_horizontal">
@@ -32,8 +32,9 @@
                 android:height="100dp"
                 android:text="@string/button1"
                 android:width="100dp"
-                android:background="#f9d4f1"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
 
             <Button
                 android:id="@+id/button2"
@@ -42,8 +43,9 @@
                 android:text="@string/button2"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
 
             <Button
                 android:id="@+id/button3"
@@ -52,8 +54,9 @@
                 android:text="@string/button3"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
         </TableRow>
 
         <TableRow
@@ -69,8 +72,9 @@
                 android:text="@string/button4"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
 
             <Button
                 android:id="@+id/button5"
@@ -79,8 +83,9 @@
                 android:text="@string/button5"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
             <Button
                 android:id="@+id/button6"
                 android:layout_width="match_parent"
@@ -88,8 +93,9 @@
                 android:text="@string/button6"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
         </TableRow>
         <TableRow
             android:id="@+id/tableRow3"
@@ -103,8 +109,9 @@
                 android:text="@string/button7"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
             <Button
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
@@ -112,8 +119,9 @@
                 android:text="@string/button8"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
             <Button
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
@@ -121,8 +129,9 @@
                 android:text="@string/button9"
                 android:height="100dp"
                 android:width="100dp"
-                android:background="#f6aee6"
-                android:textSize="36dp" />
+                android:background="@android:color/darker_gray"
+                android:textSize="36dp"
+                android:layout_margin="1dp" />
         </TableRow>
     </TableLayout>
 
@@ -142,7 +151,7 @@
             android:id="@+id/info"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/holo_green_light" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -160,7 +169,7 @@
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/izjednaceno"
             android:layout_marginEnd="47dp"
-            android:textColor="@color/abc_primary_text_disable_only_material_light" />
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -170,7 +179,7 @@
             android:id="@+id/izjednaceno"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/abc_primary_text_disable_only_material_light" />
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -181,7 +190,7 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/izjednaceno"
             android:layout_marginStart="39dp"
-            android:textColor="@color/abc_primary_text_disable_only_material_light" />
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -192,7 +201,8 @@
             android:layout_alignBaseline="@+id/counterIzjednaceno"
             android:layout_alignBottom="@+id/counterIzjednaceno"
             android:layout_alignEnd="@+id/igrac"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -201,7 +211,8 @@
             android:text="0"
             android:id="@+id/counterIzjednaceno"
             android:layout_below="@+id/izjednaceno"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -211,7 +222,8 @@
             android:id="@+id/counterAndroid"
             android:layout_below="@+id/android"
             android:layout_alignEnd="@+id/android"
-            android:layout_marginEnd="24dp" />
+            android:layout_marginEnd="24dp"
+            android:textColor="#ffffff" />
     </RelativeLayout>
 
     <Button
